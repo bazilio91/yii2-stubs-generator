@@ -7,7 +7,7 @@ use yii\console\Exception;
 
 class StubsController extends Controller
 {
-    public $outputFile = 'Yii.php';
+    public $outputFile = 'yii2stubs.php';
 
     protected function getTemplate()
     {

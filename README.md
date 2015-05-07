@@ -28,7 +28,7 @@ to the require section of your composer.json.
 Usage
 -----
 
-To use this extension,  simply add the following code in your application configuration (console.php):
+To use this extension, simply add the following code in your application configuration (console.php):
 
 ```php
 'controllerMap' => [
@@ -45,3 +45,5 @@ php yii stubs console
 # to generate stubs for several apps
 php yii stubs console common frontend
 ```
+
+File with stubs by default located in vendor directory.
