@@ -1,6 +1,6 @@
 <?php
 
-namespace console\controllers;
+namespace bazilio\stubsgenerator;
 
 use yii\console\Controller;
 use yii\console\Exception;

@@ -1,1 +1,5 @@
 /vendor/
+
+# ide
+.idea
+yii2-stubs-generator.iml
