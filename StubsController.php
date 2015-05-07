@@ -7,7 +7,7 @@ use yii\console\Exception;
 
 class StubsController extends Controller
 {
-    public $outputFile = 'yii2stubs.php';
+    public $outputFile = null;
 
     protected function getTemplate()
     {
@@ -48,7 +48,7 @@ TPL;
 
     public function actionIndex($app)
     {
-        $path = \Yii::$app->getVendorPath() . DIRECTORY_SEPARATOR . 'Yii.php';
+        $path = $this->outputFile ? $this->outputFile : \Yii::$app->getVendorPath() . DIRECTORY_SEPARATOR . 'Yii.php';
 
         $components = [];
 

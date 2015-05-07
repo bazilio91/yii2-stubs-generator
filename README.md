@@ -19,7 +19,7 @@ php composer.phar require --prefer-dist bazilio/yii2-stubs-generator
 or add
 
 ```json
-"bazilio/yii2-stubs-generator": "~0.0.1"
+"bazilio/yii2-stubs-generator": "*"
 ```
 
 to the require section of your composer.json.
@@ -47,3 +47,11 @@ php yii stubs console common frontend
 ```
 
 File with stubs by default located in vendor directory.
+
+Usage with PhpStorm
+-------------------
+yii stubs common console frontend 
+
+1. Install `File Watchers` JetBrains plugin
+2. Open `File Watchers` plugin config and import [watcher.xml](watcher.xml)
+3. Edit imported watcher for your needs
