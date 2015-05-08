@@ -1,5 +1,5 @@
-Yii::$app stubs generator extension for Yii 2
-=============================================
+Yii::$app stubs generator for Yii 2
+===================================
 
 This extension provides no-more-butthurt generator command for Yii 2.
 
@@ -32,7 +32,7 @@ To use this extension, simply add the following code in your application configu
 
 ```php
 'controllerMap' => [
-    'fixture' => [
+    'stubs' => [
         'class' => 'bazilio\stubsgenerator\StubsController',
     ],
 ],
