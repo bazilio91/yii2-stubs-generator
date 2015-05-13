@@ -1,7 +1,7 @@
 Yii::$app stubs generator for Yii 2
 ===================================
 
-This extension provides no-more-butthurt generator command for Yii 2.
+This extension provides no-more-butthurt components autocomplete generator command for Yii 2.
 
 ![in action](http://monosnap.com/image/vCnH1SWaXwKXLuchkutNGZXkeeoYWK.png)
 
