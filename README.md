@@ -39,7 +39,7 @@ To use this extension, simply add the following code in your application configu
 ```
 
 ```
-# generate fixtures for console application
+# generate stubs for console application
 php yii stubs console
 
 # to generate stubs for several apps
@@ -50,7 +50,6 @@ File with stubs by default located in vendor directory.
 
 Usage with PhpStorm
 -------------------
-yii stubs common console frontend 
 
 1. Install `File Watchers` JetBrains plugin
 2. Open `File Watchers` plugin config and import [watcher.xml](watcher.xml)
