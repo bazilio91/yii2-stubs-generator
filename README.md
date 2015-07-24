@@ -54,3 +54,4 @@ Usage with PhpStorm
 1. Install `File Watchers` JetBrains plugin
 2. Open `File Watchers` plugin config and import [watcher.xml](watcher.xml)
 3. Edit imported watcher for your needs
+4. Add scope for limit trigger to config files: ![](http://monosnap.com/image/I75MVnqdTuyH0LkYnYjIDcTnMege6I.png)
