@@ -78,6 +78,8 @@ TPL;
         $content = str_replace('{stubs}', $stubs, $this->getTemplate());
         $content = str_replace('{time}', date(DATE_ISO8601), $content);
 
-        file_put_contents($path, $content);
+        if($content!=@file_get_contents($path)) {
+            file_put_contents($path, $content);
+        }
     }
 }
