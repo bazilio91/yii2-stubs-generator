@@ -52,9 +52,9 @@ TPL;
 
         $components = [];
 
-        foreach (\Yii::$app->requestedParams as $app) {
-            $configFile = $app . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'main.php';
-            if (!file_exists($configFile)) {
+        foreach (\Yii::$app->requestedParams as $configFile) {
+
+            if (!is_file($configFile)) {
                 throw new Exception('Config file doesn\'t exists: ' . $configFile);
             }
 
