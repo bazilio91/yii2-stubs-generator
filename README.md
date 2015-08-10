@@ -13,16 +13,16 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist bazilio/yii2-stubs-generator
+php composer.phar require --dev --prefer-dist bazilio/yii2-stubs-generator:"~0.0.3"
 ```
 
 or add
 
 ```json
-"bazilio/yii2-stubs-generator": "*"
+"bazilio/yii2-stubs-generator": "~0.0.3"
 ```
 
-to the require section of your composer.json.
+to the `require-dev` section of your `composer.json`.
 
 
 Usage
