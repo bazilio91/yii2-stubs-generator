@@ -13,7 +13,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist bazilio/yii2-stubs-generator
+php composer.phar require --dev --prefer-dist bazilio/yii2-stubs-generator:"*"
 ```
 
 or add
@@ -22,7 +22,7 @@ or add
 "bazilio/yii2-stubs-generator": "*"
 ```
 
-to the require section of your composer.json.
+to the `require-dev` section of your `composer.json`.
 
 
 Usage
