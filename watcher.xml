@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TaskOptions>
     <TaskOptions>
-        <option name="arguments" value="stubs console common frontend" />
+        <option name="arguments" value="stubs console/config/main.php common/config/main.php frontend/config/main.php" />
         <option name="checkSyntaxErrors" value="true" />
         <option name="description" value="" />
         <option name="exitCodeBehavior" value="ERROR" />

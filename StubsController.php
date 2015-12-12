@@ -46,19 +46,18 @@ class ConsoleApplication extends yii\console\Application
 TPL;
     }
 
-    public function actionIndex($app)
+    public function actionIndex()
     {
         $path = $this->outputFile ? $this->outputFile : \Yii::$app->getVendorPath() . DIRECTORY_SEPARATOR . 'Yii.php';
 
         $components = [];
 
-        foreach (\Yii::$app->requestedParams as $app) {
-            $configFile = $app . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'main.php';
-            if (!file_exists($configFile)) {
-                throw new Exception('Config file doesn\'t exists: ' . $configFile);
+        foreach (\Yii::$app->requestedParams as $configPath) {
+            if (!file_exists($configPath)) {
+                throw new Exception('Config file doesn\'t exists: ' . $configPath);
             }
 
-            $config = include($configFile);
+            $config = include($configPath);
 
             foreach ($config['components'] as $name => $component) {
                 if (!isset($component['class'])) {

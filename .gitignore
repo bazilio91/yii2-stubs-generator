@@ -3,3 +3,4 @@
 # ide
 .idea
 yii2-stubs-generator.iml
+composer.lock

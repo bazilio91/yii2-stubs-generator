@@ -1,5 +1,9 @@
 Yii::$app stubs generator for Yii 2
 ===================================
+[![Latest Stable Version](https://poser.pugx.org/bazilio/yii2-stubs-generator/v/stable)](https://packagist.org/packages/bazilio/yii2-stubs-generator) 
+[![Total Downloads](https://poser.pugx.org/bazilio/yii2-stubs-generator/downloads)](https://packagist.org/packages/bazilio/yii2-stubs-generator) 
+[![Latest Unstable Version](https://poser.pugx.org/bazilio/yii2-stubs-generator/v/unstable)](https://packagist.org/packages/bazilio/yii2-stubs-generator) 
+[![License](https://poser.pugx.org/bazilio/yii2-stubs-generator/license)](https://packagist.org/packages/bazilio/yii2-stubs-generator)
 
 This extension provides no-more-butthurt components autocomplete generator command for Yii 2.
 
@@ -40,10 +44,10 @@ To use this extension, simply add the following code in your application configu
 
 ```
 # generate stubs for console application
-php yii stubs console
+php yii stubs console/config/main.php
 
 # to generate stubs for several apps
-php yii stubs console common frontend
+php yii stubs console/config/main.php common/config/main.php frontend/config/main.php
 ```
 
 File with stubs by default located in vendor directory.
@@ -54,4 +58,4 @@ Usage with PhpStorm
 1. Install `File Watchers` JetBrains plugin
 2. Open `File Watchers` plugin config and import [watcher.xml](watcher.xml)
 3. Edit imported watcher for your needs
-4. Add scope for limit trigger to config files: ![](http://monosnap.com/image/I75MVnqdTuyH0LkYnYjIDcTnMege6I.png)
+4. Add scope to limit trigger to config files: ![](https://monosnap.com/file/9UdEAsZUxO6XcOxINgm1sucWxuuYu4.png)
