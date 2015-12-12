@@ -7,7 +7,7 @@ Yii::$app stubs generator for Yii 2
 
 This extension provides no-more-butthurt components autocomplete generator command for Yii 2.
 
-![in action](http://monosnap.com/image/vCnH1SWaXwKXLuchkutNGZXkeeoYWK.png)
+![in action](https://monosnap.com/file/oHUjBSw7oIJHYAEpQKs4mVVJLfMLrM.png)
 
 Installation
 ------------
@@ -17,13 +17,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --dev --prefer-dist bazilio/yii2-stubs-generator:"~0.0.3"
+php composer.phar require --dev --prefer-dist bazilio/yii2-stubs-generator
 ```
 
 or add
 
 ```json
-"bazilio/yii2-stubs-generator": "~0.0.3"
+"bazilio/yii2-stubs-generator": "~1"
 ```
 
 to the `require-dev` section of your `composer.json`.
