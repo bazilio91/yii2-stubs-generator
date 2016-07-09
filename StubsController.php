@@ -12,6 +12,7 @@ class StubsController extends Controller
     protected function getTemplate()
     {
         return <<<TPL
+<?php
 /**
  * Yii bootstrap file.
  *
