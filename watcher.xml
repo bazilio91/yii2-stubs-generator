@@ -8,16 +8,16 @@
         <option name="fileExtension" value="php" />
         <option name="immediateSync" value="true" />
         <option name="name" value="Generate Yii2 stubs" />
-        <option name="output" value="$Projectpath$/yiisoft/yii2/Yii.php" />
+        <option name="output" value="$ProjectFileDir$/yiisoft/yii2/Yii.php" />
         <option name="outputFilters">
             <array />
         </option>
         <option name="outputFromStdout" value="false" />
         <option name="passParentEnvs" value="true" />
-        <option name="program" value="$Projectpath$/yii" />
+        <option name="program" value="$ProjectFileDir$/yii" />
         <option name="scopeName" value="main.php files" />
         <option name="trackOnlyRoot" value="false" />
-        <option name="workingDir" value="$Projectpath$" />
+        <option name="workingDir" value="$ProjectFileDir$" />
         <envs />
     </TaskOptions>
 </TaskOptions>
