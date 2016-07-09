@@ -7,7 +7,8 @@ Yii::$app stubs generator for Yii 2
 
 This extension provides no-more-butthurt components autocomplete generator command for Yii 2.
 
-![in action](https://monosnap.com/file/oHUjBSw7oIJHYAEpQKs4mVVJLfMLrM.png)
+Forked to fix PhpStorm Inspections "multiply definitions exist for class" warning.
+![in action](https://pp.vk.me/c630326/v630326746/39380/PHPLrwOxluE.jpg)
 
 Installation
 ------------
@@ -47,7 +48,7 @@ To use this extension, simply add the following code in your application configu
 php yii stubs console/config/main.php
 
 # to generate stubs for several apps
-php yii stubs console/config/main.php common/config/main.php frontend/config/main.php
+php yii stubs console/config/main.php common/config/main.php frontend/config/main.php backend/config/main.php
 ```
 
 File with stubs by default located in vendor directory.
