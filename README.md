@@ -59,3 +59,8 @@ Usage with PhpStorm
 2. Open `File Watchers` plugin config and import [watcher.xml](watcher.xml)
 3. Edit imported watcher for your needs
 4. Add scope to limit trigger to config files: ![](https://monosnap.com/file/9UdEAsZUxO6XcOxINgm1sucWxuuYu4.png)
+
+#### PhpStorm "multiple definitions exist for class"
+To hide this message:
+1. Find a duplicate class file (not created by this generator), for example: `vendor/yiisoft/yii/YiiBase.php`
+2. Mark it as a plain text in file context menu.
