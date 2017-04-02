@@ -46,11 +46,26 @@ class ConsoleApplication extends yii\console\Application
 TPL;
     }
 
+    protected function getUserTemplate()
+    {
+        return <<<TPL
+
+/**
+ * @property {user_identities} \$identity
+ */
+class User extends \yii\web\User {
+}
+TPL;
+    }
+
+
     public function actionIndex()
     {
-        $path = $this->outputFile ? $this->outputFile : \Yii::$app->getVendorPath() . DIRECTORY_SEPARATOR . 'Yii.php';
+        $path = $this->outputFile ? $this->outputFile :
+            \Yii::$app->getVendorPath() . DIRECTORY_SEPARATOR . 'Yii.php';
 
         $components = [];
+        $userIdentities = [];
 
         foreach (\Yii::$app->requestedParams as $configPath) {
             if (!file_exists($configPath)) {
@@ -64,11 +79,28 @@ TPL;
                     continue;
                 }
 
+                if ($name === 'user' && isset($component['identityClass'])) {
+                    $userIdentities[] = $component['identityClass'];
+                }
+
                 $components[$name][] = $component['class'];
             }
         }
 
         $stubs = '';
+        $userStubs = '';
+
+        if (sizeof($userIdentities)) {
+            $components['user'][] = 'User';
+
+            $userIdentities = implode('|', array_unique($userIdentities));
+            $userStubs = str_replace(
+                '{user_identities}',
+                $userIdentities,
+                $this->getUserTemplate()
+            );
+        }
+
         foreach ($components as $name => $classes) {
             $classes = implode('|', array_unique($classes));
             $stubs .= "\n * @property {$classes} \$$name";
@@ -76,8 +108,9 @@ TPL;
 
         $content = str_replace('{stubs}', $stubs, $this->getTemplate());
         $content = str_replace('{time}', date(DATE_ISO8601), $content);
+        $content .= $userStubs;
 
-        if($content!=@file_get_contents($path)) {
+        if ($content != @file_get_contents($path)) {
             file_put_contents($path, $content);
         }
     }

@@ -5,7 +5,7 @@ Yii::$app stubs generator for Yii 2
 [![Latest Unstable Version](https://poser.pugx.org/bazilio/yii2-stubs-generator/v/unstable)](https://packagist.org/packages/bazilio/yii2-stubs-generator) 
 [![License](https://poser.pugx.org/bazilio/yii2-stubs-generator/license)](https://packagist.org/packages/bazilio/yii2-stubs-generator)
 
-This extension provides no-more-butthurt components autocomplete generator command for Yii 2.
+This extension provides no-more-butthurt components & user identity autocomplete generator command for Yii 2.
 
 ![in action](https://monosnap.com/file/oHUjBSw7oIJHYAEpQKs4mVVJLfMLrM.png)
 
