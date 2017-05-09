@@ -74,13 +74,17 @@ TPL;
 
             $config = include($configPath);
 
-            foreach ($config['components'] as $name => $component) {
-                if (!isset($component['class'])) {
-                    continue;
-                }
+            if (empty($config['components'])) {
+                continue;
+            }
 
+            foreach ($config['components'] as $name => $component) {
                 if ($name === 'user' && isset($component['identityClass'])) {
                     $userIdentities[] = $component['identityClass'];
+                }
+
+                if (!isset($component['class'])) {
+                    continue;
                 }
 
                 $components[$name][] = $component['class'];
