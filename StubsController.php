@@ -79,6 +79,16 @@ TPL;
             }
 
             foreach ($config['components'] as $name => $component) {
+                if ($component instanceof \Closure) {
+                    $component = call_user_func($component);
+                    if (!is_object($component)) {
+                        continue;
+                    }
+                    $component = [
+                        'class' => get_class($component)
+                    ];
+                }
+
                 if ($name === 'user' && isset($component['identityClass'])) {
                     $userIdentities[] = $component['identityClass'];
                 }
@@ -113,7 +123,6 @@ TPL;
         $content = str_replace('{stubs}', $stubs, $this->getTemplate());
         $content = str_replace('{time}', date(DATE_ISO8601), $content);
         $content .= $userStubs;
-
         if ($content != @file_get_contents($path)) {
             file_put_contents($path, $content);
         }
