@@ -79,6 +79,10 @@ TPL;
             }
 
             foreach ($config['components'] as $name => $component) {
+                if (is_string($component)) {
+                    $component = ['class' => $component];
+                }
+
                 if ($name === 'user' && isset($component['identityClass'])) {
                     $userIdentities[] = $component['identityClass'];
                 }
