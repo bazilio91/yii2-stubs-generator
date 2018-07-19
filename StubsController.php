@@ -78,20 +78,35 @@ TPL;
                 continue;
             }
 
-            foreach ($config['components'] as $name => $component) {
-                if (is_string($component)) {
-                    $component = ['class' => $component];
-                }
+            foreach ($config['components'] as $name => $definition) {
 
-                if ($name === 'user' && isset($component['identityClass'])) {
-                    $userIdentities[] = $component['identityClass'];
-                }
+                if (is_string($definition)) {
+                    $class = $definition;
+                } else {
 
-                if (!isset($component['class'])) {
-                    continue;
-                }
+                    if (is_callable($definition, true)) {
+                        try{
+                            $definition = \Yii::$app->get($name, false);
+                        } catch(\Exception $exception){
+                            continue;
+                        }
+                    }
+                    if (is_object($definition) && !$definition instanceof Closure) {
+                        $class = get_class($definition);
+                    } else if (is_array($definition)) {
 
-                $components[$name][] = $component['class'];
+                        if ($name === 'user' && isset($definition['identityClass'])) {
+                            $userIdentities[] = $definition['identityClass'];
+                        }
+
+                        if(isset($definition['class'])){
+                            $class = $definition['class'];
+                        } else {
+                            continue;
+                        }
+                    }
+                }
+                $components[$name][] = $class;
             }
         }
 
