@@ -67,7 +67,7 @@ TPL;
         $components = [];
         $userIdentities = [];
 
-        foreach (\Yii::$app->requestedParams as $configPath) {
+        foreach (array_slice(\Yii::$app->getRequest()->getParams(), 1) as $configPath) {
             if (!file_exists($configPath)) {
                 throw new Exception('Config file doesn\'t exists: ' . $configPath);
             }
