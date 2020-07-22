@@ -112,6 +112,25 @@ TPL;
         foreach ($components as $name => $classes) {
             $classes = implode('|', array_unique($classes));
             $stubs .= "\n * @property {$classes} \$$name";
+            if (in_array($name, [
+                'db',
+                'log',
+                'cache',
+                'formatter',
+                'request',
+                'response',
+                'errorHandler',
+                'view',
+                'urlManager',
+                'i18n',
+                'authManager',
+                'assetManager',
+                'security',
+                'session',
+                'user',
+            ])) {
+                $stubs .= "\n * @method {$classes} get" . ucfirst($name) . "()";
+            }
         }
 
         $content = str_replace('{stubs}', $stubs, $this->getTemplate());
