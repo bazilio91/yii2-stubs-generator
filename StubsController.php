@@ -87,11 +87,11 @@ TPL;
                     $userIdentities[] = $component['identityClass'];
                 }
 
-                if (!isset($component['class'])) {
-                    continue;
+                if (isset($component['class'])) {
+                    $components[$name][] = $component['class'];
+                } elseif (isset($component['__class'])) {
+                    $components[$name][] = $component['__class'];
                 }
-
-                $components[$name][] = $component['class'];
             }
         }
 
