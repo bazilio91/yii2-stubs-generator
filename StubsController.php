@@ -4,6 +4,7 @@ namespace bazilio\stubsgenerator;
 
 use yii\console\Controller;
 use yii\console\Exception;
+use yii\di\Instance;
 
 class StubsController extends Controller
 {
@@ -88,9 +89,18 @@ TPL;
                 }
 
                 if (isset($component['class'])) {
-                    $components[$name][] = $component['class'];
+                    $class = $component['class'];
                 } elseif (isset($component['__class'])) {
-                    $components[$name][] = $component['__class'];
+                    $class = $component['class'];
+                }
+
+                if (isset($class)) {
+                    if ($class instanceof Instance)
+                    {
+                        $components[$name][] = get_class($class->get());
+                    } else {
+                        $components[$name][] = $class;
+                    }
                 }
             }
         }
