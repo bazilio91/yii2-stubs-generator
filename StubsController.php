@@ -92,6 +92,8 @@ TPL;
                     $class = $component['class'];
                 } elseif (isset($component['__class'])) {
                     $class = $component['class'];
+                } else {
+                    continue;
                 }
 
                 if (isset($class)) {
@@ -102,7 +104,6 @@ TPL;
                         $components[$name][] = $class;
                     }
                 }
-                unset($class);
             }
         }
 
