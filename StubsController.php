@@ -102,6 +102,7 @@ TPL;
                         $components[$name][] = $class;
                     }
                 }
+                unset($class);
             }
         }
 
