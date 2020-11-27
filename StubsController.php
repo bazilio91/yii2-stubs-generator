@@ -91,7 +91,7 @@ TPL;
                 if (isset($component['class'])) {
                     $class = $component['class'];
                 } elseif (isset($component['__class'])) {
-                    $class = $component['class'];
+                    $class = $component['__class'];
                 } else {
                     continue;
                 }
